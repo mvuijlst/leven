@@ -1,0 +1,26 @@
+{
+    "birth": "1970-08-27",
+    "periods": [
+        {
+            "name": "Sint-Theresia, Sint-Denijs-Westrem",
+            "colour": "e2efdb",
+            "start": "1973-09-01",
+            "end": "1976-06-06"
+        }, {
+            "name": "S&LEPSP, Gent",
+            "colour": "c7e0b6",
+            "start": "1976-09-01",
+            "end": "1982-06-06"
+        }, {
+            "name": "Sint-Barbaracollege, Gent",
+            "colour": "a9cf8e",
+            "start": "1982-09-01",
+            "end": "1989-06-06"
+        }, {
+            "name": "Universiteit Gent",
+            "colour": "538237",
+            "start": "1989-10-01",
+            "end": "1995-06-06"
+        }
+    ]
+}
