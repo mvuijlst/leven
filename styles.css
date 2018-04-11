@@ -1,0 +1,47 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;
+    padding: 10px;
+}
+
+tr.months th {
+    padding: 0;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+td,
+th {
+    width: 20px;
+    height: 20px;
+}
+
+th {
+    color: rgba(0, 0, 0, 0.8);
+    padding-right: 5px;
+}
+
+td {
+    color: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.b_0 {
+    border: none;
+}
+
+.b_r {
+    border-right: 2px solid #000;
+}
+
+.b_l {
+    border-left: 2px solid #000;
+}
+
+.b_t {
+    border-top: 2px solid #000;
+}
+
+.b_b {
+    border-bottom: 2px solid #000;
+}
