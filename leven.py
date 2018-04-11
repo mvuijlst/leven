@@ -30,13 +30,16 @@ def main():
     enddate = date(now.year, now.month, now.day)
 
     output = '<!DOCTYPE html><html><head><title>Leven</title>'
-    output = output + '<link rel="stylesheet" type="text/css" href="normalize.css" />'
-    output = output + '<link rel="stylesheet" type="text/css" href="styles.css" />'
-    output = output + '<style>' + css + '</style>'
-    output = output + '<body><table>'
-    output = output + '<tr class="months"><th></th><th>j</th><th>f</th>'
-    output = output + '<th>m</th><th>a</th><th>m</th><th>j</th><th>j</th>'
-    output = output + '<th>a</th><th>s</th><th>o</th><th>n</th><th>d</th></tr>'
+    output = output + '<link rel="stylesheet" type="text/css" href="normalize.css" />' + \
+                '<link rel="stylesheet" type="text/css" href="styles.css" />' + \
+                '<style>' + css + '</style>' + \
+                '<body><table>'
+    months = '<tr class="months"><th></th><th>j</th><th>f</th>' + \
+                '<th>m</th><th>a</th><th>m</th><th>j</th><th>j</th>' + \
+                '<th>a</th><th>s</th><th>o</th><th>n</th><th>d</th></tr>'
+
+    output += months
+
     while thisdate < enddate:
         if thisdate.month == 1:
             output = output + '<tr><th>' + str(thisdate.year) + '</th>'
@@ -73,7 +76,20 @@ def main():
             output = output + '</tr>'
 
         thisdate = thisdate + relativedelta(months=+1)
-    output = output + '</table></body></html>'
+
+    output += months
+    output += '</table>'
+
+    output += '<p><strong>Legende</strong></p><table class="legend">'
+
+    periods = []
+    for period in life['periods']:
+        if period['code'] not in periods:
+            output = output + '<tr><td class="' + period['code'] + '"></td>' + \
+                '<th>' + period['name'] + '</th></tr><tr><th colspan="3"></th></tr>'
+            periods.append(period['code'])
+
+    output +=  '</table></body></html>'
 
     with open('leven.html', mode='w') as html:
         html.write(output)

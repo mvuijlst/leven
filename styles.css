@@ -45,3 +45,19 @@ td {
 .b_b {
     border-bottom: 2px solid #000;
 }
+
+.legend th,
+.legend td {
+    white-space: nowrap;
+    text-align: left;
+    border: none;
+}
+
+.legend th {
+    padding-left: 5px;
+}
+
+table {
+    float: left;
+    margin-right: 30px;
+}
