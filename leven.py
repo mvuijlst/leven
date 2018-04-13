@@ -41,7 +41,7 @@ def main():
                 css = css + '.' + period['code'] + '{background-color:#' + period['colour'] + ';}'
                 legend = legend + '<tr><td class="' + period['code'] + '"></td>' + \
                     '<th>' + get_name(period) + '</th></tr><tr><th colspan="3"></th></tr>'
-                periods.append(period['code'])               
+                periods.append(period['code'])
     legend +=  '</table></body></html>'
 
     thisdate = date(birth.year, 1, 1)
@@ -59,6 +59,8 @@ def main():
     output += months
 
     while thisdate < enddate:
+        ttt = ''
+
         if thisdate.month == 1:
             output = output + '<tr><th>' + str(thisdate.year) + '</th>'
         style = ''
@@ -66,7 +68,9 @@ def main():
             for period in life[section]:
                 if thisdate >= convert_date(period['startDate']) and \
                     thisdate <= convert_date(period['endDate']):
-                    style = style + ' ' + period['code']
+                    style = style + ' tt ' + period['code']
+                    ttt = str(thisdate.month) + '/' + str(thisdate.year) + \
+                        '<br />' + get_name(period)
 
         # border rules
         if thisdate.month == 12 \
@@ -90,6 +94,8 @@ def main():
             output = output + '<td>'
         if thisdate >= date(birth.year, birth.month, 1):
             output = output + str(thisdate.month)
+            if ttt != '':
+                output = output + '<b class="ttt">' + ttt + '</b>'
         output = output + '</td>'
         if thisdate.month == 12:
             output = output + '</tr>'
