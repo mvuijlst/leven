@@ -9,22 +9,40 @@ def convert_date(string_date):
 
     return datetime.strptime(string_date, '%Y-%m-%d').date()
 
+def get_name(period):
+    """ naam uit studie of werk halen """
+
+    name = ""
+    if 'name' in period:
+        name += period['name']
+    if 'institution' in period:
+        name += period['institution']
+    if 'location' in period:
+        name += ', '
+        name += period['location']
+    return name
+
 def main():
     " Hoofdding "
 
-    with open('leven.json') as json_data:
+    with open('mvuijlst.json') as json_data:
         life = json.load(json_data)
         # print(life)
 
-    birth = convert_date(life['birth'])
+    birth = convert_date(life['basics']['birth']['date'])
     now = datetime.now()
 
     css = ''
-    periods = []
-    for period in life['periods']:
-        if period['code'] not in periods:
-            css = css + '.' + period['code'] + '{background-color:#' + period['colour'] + ';}'
-            periods.append(period['code'])
+    legend = '<p><strong>Legende</strong></p><table class="legend">'
+    for section in ['education', 'work']:
+        periods = []
+        for period in life[section]:
+            if period['code'] not in periods:
+                css = css + '.' + period['code'] + '{background-color:#' + period['colour'] + ';}'
+                legend = legend + '<tr><td class="' + period['code'] + '"></td>' + \
+                    '<th>' + get_name(period) + '</th></tr><tr><th colspan="3"></th></tr>'
+                periods.append(period['code'])               
+    legend +=  '</table></body></html>'
 
     thisdate = date(birth.year, 1, 1)
     enddate = date(now.year, now.month, now.day)
@@ -44,10 +62,11 @@ def main():
         if thisdate.month == 1:
             output = output + '<tr><th>' + str(thisdate.year) + '</th>'
         style = ''
-        for period in life['periods']:
-            if thisdate >= convert_date(period['start']) and \
-                thisdate <= convert_date(period['end']):
-                style = style + ' ' + period['code']
+        for section in ['education', 'work']:
+            for period in life[section]:
+                if thisdate >= convert_date(period['startDate']) and \
+                    thisdate <= convert_date(period['endDate']):
+                    style = style + ' ' + period['code']
 
         # border rules
         if thisdate.month == 12 \
@@ -80,16 +99,7 @@ def main():
     output += months
     output += '</table>'
 
-    output += '<p><strong>Legende</strong></p><table class="legend">'
-
-    periods = []
-    for period in life['periods']:
-        if period['code'] not in periods:
-            output = output + '<tr><td class="' + period['code'] + '"></td>' + \
-                '<th>' + period['name'] + '</th></tr><tr><th colspan="3"></th></tr>'
-            periods.append(period['code'])
-
-    output +=  '</table></body></html>'
+    output += legend
 
     with open('leven.html', mode='w') as html:
         html.write(output)

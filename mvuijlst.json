@@ -1,0 +1,101 @@
+{
+    "basics": {
+        "name": "Michel Vuijlsteke",
+        "email": "michel@zog.org",
+        "phone": "+32 473 444 182",
+        "url": "http://blog.zog.org/about",
+        "birth": {
+            "date": "1970-08-27",
+            "location": "Gent, België"
+        }
+    },
+    "education": [
+        {
+            "institution": "Sint-Theresia",
+            "location": "Sint-Denijs-Westrem",
+            "startDate": "1973-09-01",
+            "endDate": "1976-06-06",
+            "colour": "e2efdb",
+            "code": "st"
+        }, {
+            "institution": "S&LEPSP",
+            "location": "Gent",
+            "startDate": "1976-09-01",
+            "endDate": "1982-06-06",
+            "colour": "c7e0b6",
+            "code": "sl"
+        }, {
+            "institution": "Sint-Barbaracollege",
+            "location": "Gent",
+            "startDate": "1982-09-01",
+            "endDate": "1989-06-06",
+            "colour": "a9cf8e",
+            "code": "sb"
+        }, {
+            "institution": "Universiteit Gent",
+            "startDate": "1989-10-01",
+            "endDate": "1995-06-06",
+            "colour": "538237",
+            "code": "ug"
+        }
+    ],
+    "work": [
+        {
+            "name": "Netpoint (Impakt)",
+            "location": "Gent",
+            "startDate": "1995-07-01",
+            "endDate": "1995-08-31",
+            "colour": "d8e3f4",
+            "code": "im"
+        }, {
+            "name": "Netpoint (Griffo)",
+            "location": "Gent",
+            "startDate": "1995-09-01",
+            "endDate": "1998-03-31",
+            "colour": "b6c5e9",
+            "code": "gr"
+        }, {
+            "name": "Netpoint (Impakt)",
+            "location": "Gent",
+            "startDate": "1998-04-01",
+            "endDate": "1998-04-30",
+            "colour": "d8e3f4",
+            "code": "im"
+        }, {
+            "name": "Netpoint NV",
+            "location": "Gent",
+            "startDate": "1998-05-01",
+            "endDate": "2004-12-31",
+            "colour": "90a8db",
+            "code": "np"
+        }, {
+            "name": "Europacollege",
+            "location": "Brugge",
+            "startDate": "2005-01-01",
+            "endDate": "2006-10-30",
+            "colour": "b9124f",
+            "code": "eu"
+        }, {
+            "name": "Namahn",
+            "location": "Brussel",
+            "startDate": "2006-11-01",
+            "endDate": "2010-10-31",
+            "colour": "6b0b2b",
+            "code": "na"
+        }, {
+            "name": "Adhese",
+            "location": "Gent",
+            "startDate": "2010-07-01",
+            "endDate": "2018-01-15",
+            "colour": "ec7e31",
+            "code": "ad"
+        }, {
+            "name": "Namahn",
+            "location": "Brussel",
+            "startDate": "2018-01-15",
+            "endDate": "2020-10-31",
+            "colour": "6b0b2b",
+            "code": "na"
+        }
+    ]
+}
