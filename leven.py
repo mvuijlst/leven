@@ -50,7 +50,7 @@ def main():
     output = '<!DOCTYPE html><html><head><title>Leven</title>'
     output = output + '<link rel="stylesheet" type="text/css" href="normalize.css" />' + \
                 '<link rel="stylesheet" type="text/css" href="styles.css" />' + \
-                '<style>' + css + '</style>' + \
+                '<style>' + css + '</style></head>' + \
                 '<body><table>'
     months = '<tr class="months"><th></th><th>j</th><th>f</th>' + \
                 '<th>m</th><th>a</th><th>m</th><th>j</th><th>j</th>' + \
