@@ -34,8 +34,8 @@ def main():
 
     css = ''
     legend = '<p><strong>Legende</strong></p><table class="legend">'
+    periods = []
     for section in ['education', 'work']:
-        periods = []
         for period in life[section]:
             if period['code'] not in periods:
                 css = css + '.' + period['code'] + '{background-color:#' + period['colour'] + ';}'
