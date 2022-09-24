@@ -93,9 +93,15 @@
             "name": "Namahn",
             "location": "Brussel",
             "startDate": "2018-01-15",
-            "endDate": "2021-06-30",
+            "endDate": "2022-07-31",
             "colour": "6b0b2b",
             "code": "na"
+        }, {
+            "name": "Universiteit Gent",
+            "startDate": "2022-08-01",
+            "endDate": "2022-09-30",
+            "colour": "1e64c8",
+            "code": "gu"
         }
     ]
 }
